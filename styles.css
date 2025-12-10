@@ -1,0 +1,170 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Улучшенные стили для заголовков */
+.page-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 2rem;
+    color: transparent;
+    background-image: linear-gradient(to right, #ffd700, #ff7f50);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradient-shift 5s infinite alternate-reverse;
+}
+
+.schedule h2,
+.about h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin: 20px 0;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #ffd700, #ff7f50);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradient-shift 5s infinite alternate-reverse;
+}
+
+.about h3 {
+    text-align: center;
+    font-size: 1.4em;
+    margin: 20px 0;
+    color: #ffd700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация смены цвета текста */
+@keyframes gradient-shift {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+}
+
+/* Стили навигационного меню */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60px;
+    background-color: #ffcc33;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    transition: all .3s ease-in-out;
+    padding: 15px;
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль каталога продуктов */
+.catalog {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    place-items: center;
+}
+
+.product img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(.2,.8,.2,1); /* плавная анимация увеличения */
+}
+
+.product p,
+.product span {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product span {
+    font-weight: bold;
+    color: green;
+}
+
+/* График работы */
+.schedule table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 1.1em;
+}
+
+.schedule td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Информация о магазине */
+.about {
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about ol li {
+    margin-bottom: 5px;
+}
+
+/* Адаптация на мобильные устройства */
+@media screen and (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+
+    .schedule table {
+        width: 100%;
+    }
+}
+.site-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffcc33;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand-name {
+    margin: 0;
+}
